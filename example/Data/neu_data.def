@@ -1,0 +1,31 @@
+DESCRIPTION
+"D2D Data"
+"Date: 2025"
+"Version: 1.0"
+
+PREDICTOR
+t	T	"min"	"time"	0	10.0
+
+INPUTS
+
+u1	"step1(t, 0, 0, 1)"
+
+OBSERVABLES
+
+CDK2_obs	C	"au"	"conc."	0	0	"x1"
+CDK4_obs	C	"au"	"conc."	0	0	"x2"
+CDKN1A_obs	C	"au"	"conc."	0	0	"x3"
+PCNA_obs	C	"au"	"conc."	0	0	"x4"
+RB1_obs	C	"au"	"conc."	0	0	"x5"
+TP53_obs	C	"au"	"conc."	0	0	"x6"
+
+ERRORS
+
+CDK2_obs	CDK2_obs_std
+CDK4_obs	CDK4_obs_std
+CDKN1A_obs	CDKN1A_obs_std
+PCNA_obs	PCNA_obs_std
+RB1_obs	RB1_obs_std
+TP53_obs	TP53_obs_std
+
+CONDITIONS

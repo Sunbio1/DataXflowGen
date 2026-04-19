@@ -1,0 +1,7 @@
+Diag-Ordner: /home/sac43cg/Data2Dynamics-neu/arFramework3/Examples/s1/diag_out/20251214_134337
+auto_from_csv=0 | auto_find_levers=0
+gene_with_regulation.csv: /home/sac43cg/Data2Dynamics-neu/arFramework3/Examples/s1/diag_out/20251214_134337/gene_with_regulation.csv (generated)
+ERROR: Diagnose-Skripte nicht im Pfad.
+STACK:
+  /home/sac43cg/Data2Dynamics-neu/arFramework3/Examples/s1/setup_all.m:228
+  /usr/local/MATLAB/R2023a/toolbox/matlab/lang/run.m:91
