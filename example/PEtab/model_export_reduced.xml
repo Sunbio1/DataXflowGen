@@ -1,0 +1,1080 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model metaid="arFramework3" id="neu_model">
+    <listOfUnitDefinitions>
+      <unitDefinition id="time" name="time">
+        <listOfUnits>
+          <unit kind="second" exponent="1" scale="0" multiplier="60"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="nM" name="nM">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="1e-09"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="pl" name="pl">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1e-12"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="cyt" spatialDimensions="3" size="1" units="pl" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="x1" name="CDK2" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="x2" name="CDK4" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="x3" name="CDKN1A" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="x4" name="PCNA" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="x5" name="RB1" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="x6" name="TP53" compartment="cyt" initialConcentration="1" substanceUnits="nM" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="a_1_5" name="a_1_5" value="91.7299867378646" constant="true"/>
+      <parameter id="a_6_3" name="a_6_3" value="155.832687292963" constant="true"/>
+      <parameter id="b_1_1" name="b_1_1" value="3.21626230538035" constant="true"/>
+      <parameter id="b_1_3" name="b_1_3" value="165.05078865988" constant="true"/>
+      <parameter id="b_2_3" name="b_2_3" value="165.354927964173" constant="true"/>
+      <parameter id="b_2_5" name="b_2_5" value="0.536880209675318" constant="true"/>
+      <parameter id="b_3_1" name="b_3_1" value="1.26551001578153" constant="true"/>
+      <parameter id="b_3_2" name="b_3_2" value="7.89771197921014" constant="true"/>
+      <parameter id="b_3_4" name="b_3_4" value="5.812551423626" constant="true"/>
+      <parameter id="b_3_5" name="b_3_5" value="0.170937678321107" constant="true"/>
+      <parameter id="b_4_1" name="b_4_1" value="5.93829884604013e-11" constant="true"/>
+      <parameter id="b_6_2" name="b_6_2" value="11.9701164744359" constant="true"/>
+      <parameter id="delta_1" name="delta_1" value="0.987110170633073" constant="true"/>
+      <parameter id="h_1" name="h_1" value="342.507176440152" constant="true"/>
+      <parameter id="h_2" name="h_2" value="1.0000708753099" constant="true"/>
+      <parameter id="h_3" name="h_3" value="158.77556417041" constant="true"/>
+      <parameter id="h_4" name="h_4" value="1.00000000375767" constant="true"/>
+      <parameter id="h_5" name="h_5" value="52.8110448426547" constant="true"/>
+      <parameter id="init_x1" name="init_x1" value="0.165378212219373" constant="true"/>
+      <parameter id="init_x2" name="init_x2" value="0.480312244962759" constant="true"/>
+      <parameter id="init_x3" name="init_x3" value="0.157275603908751" constant="true"/>
+      <parameter id="init_x4" name="init_x4" value="0.288785071057895" constant="true"/>
+      <parameter id="init_x5" name="init_x5" value="0.289017433475007" constant="true"/>
+      <parameter id="init_x6" name="init_x6" value="0.216808254220625" constant="true"/>
+      <parameter id="u1" name="u1" value="0" constant="false"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="x1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_x1 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="x2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_x2 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="x3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_x3 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="x4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_x4 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="x5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_x5 </ci>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="x6">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <ci> init_x6 </ci>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="u1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <piecewise>
+            <piece>
+              <cn type="integer"> 0 </cn>
+              <apply>
+                <lt/>
+                <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+                <cn type="integer"> 0 </cn>
+              </apply>
+            </piece>
+            <otherwise>
+              <cn type="integer"> 1 </cn>
+            </otherwise>
+          </piecewise>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfReactions>
+      <reaction id="reaction1" reversible="false">
+        <listOfProducts>
+          <speciesReference species="x1" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="x1"/>
+          <modifierSpeciesReference species="x3"/>
+          <modifierSpeciesReference species="x4"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <ci> x1 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <ci> h_1 </ci>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <plus/>
+                                <apply>
+                                  <times/>
+                                  <ci> b_1_1 </ci>
+                                  <ci> x1 </ci>
+                                </apply>
+                                <apply>
+                                  <times/>
+                                  <ci> b_3_1 </ci>
+                                  <ci> x3 </ci>
+                                </apply>
+                                <apply>
+                                  <times/>
+                                  <ci> b_4_1 </ci>
+                                  <ci> x4 </ci>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <ci> b_1_1 </ci>
+                                <ci> b_3_1 </ci>
+                                <ci> b_4_1 </ci>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <plus/>
+                                <ci> b_1_1 </ci>
+                                <ci> b_3_1 </ci>
+                                <ci> b_4_1 </ci>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <apply>
+                                  <times/>
+                                  <ci> b_1_1 </ci>
+                                  <ci> x1 </ci>
+                                </apply>
+                                <apply>
+                                  <times/>
+                                  <ci> b_3_1 </ci>
+                                  <ci> x3 </ci>
+                                </apply>
+                                <apply>
+                                  <times/>
+                                  <ci> b_4_1 </ci>
+                                  <ci> x4 </ci>
+                                </apply>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <cn> 0.5 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <cn> 0.5 </cn>
+                        <ci> h_1 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <ci> h_1 </ci>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <times/>
+                                <apply>
+                                  <plus/>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_1_1 </ci>
+                                    <ci> x1 </ci>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_3_1 </ci>
+                                    <ci> x3 </ci>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_4_1 </ci>
+                                    <ci> x4 </ci>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <ci> b_1_1 </ci>
+                                  <ci> b_3_1 </ci>
+                                  <ci> b_4_1 </ci>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <times/>
+                                <apply>
+                                  <plus/>
+                                  <ci> b_1_1 </ci>
+                                  <ci> b_3_1 </ci>
+                                  <ci> b_4_1 </ci>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_1_1 </ci>
+                                    <ci> x1 </ci>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_3_1 </ci>
+                                    <ci> x3 </ci>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_4_1 </ci>
+                                    <ci> x4 </ci>
+                                  </apply>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                              </apply>
+                            </apply>
+                            <cn> 0.5 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <cn> 0.5 </cn>
+                          <ci> h_1 </ci>
+                        </apply>
+                      </apply>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction2" reversible="false">
+        <listOfProducts>
+          <speciesReference species="x2" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="x2"/>
+          <modifierSpeciesReference species="x3"/>
+          <modifierSpeciesReference species="x6"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <cn> 0.5 </cn>
+                        <ci> h_2 </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <ci> h_2 </ci>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <plus/>
+                                <apply>
+                                  <times/>
+                                  <ci> b_3_2 </ci>
+                                  <ci> x3 </ci>
+                                </apply>
+                                <apply>
+                                  <times/>
+                                  <ci> b_6_2 </ci>
+                                  <ci> x6 </ci>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <ci> b_3_2 </ci>
+                                <ci> b_6_2 </ci>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <times/>
+                              <apply>
+                                <plus/>
+                                <ci> b_3_2 </ci>
+                                <ci> b_6_2 </ci>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <apply>
+                                  <times/>
+                                  <ci> b_3_2 </ci>
+                                  <ci> x3 </ci>
+                                </apply>
+                                <apply>
+                                  <times/>
+                                  <ci> b_6_2 </ci>
+                                  <ci> x6 </ci>
+                                </apply>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                          </apply>
+                          <cn> 0.5 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <ci> h_2 </ci>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <times/>
+                                <apply>
+                                  <plus/>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_3_2 </ci>
+                                    <ci> x3 </ci>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_6_2 </ci>
+                                    <ci> x6 </ci>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <ci> b_3_2 </ci>
+                                  <ci> b_6_2 </ci>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <times/>
+                                <apply>
+                                  <plus/>
+                                  <ci> b_3_2 </ci>
+                                  <ci> b_6_2 </ci>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_3_2 </ci>
+                                    <ci> x3 </ci>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <ci> b_6_2 </ci>
+                                    <ci> x6 </ci>
+                                  </apply>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                              </apply>
+                            </apply>
+                            <cn> 0.5 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <cn> 0.5 </cn>
+                          <ci> h_2 </ci>
+                        </apply>
+                      </apply>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> x2 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction3" reversible="false">
+        <listOfProducts>
+          <speciesReference species="x3" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="x1"/>
+          <modifierSpeciesReference species="x2"/>
+          <modifierSpeciesReference species="x3"/>
+          <modifierSpeciesReference species="x6"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <apply>
+                    <divide/>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <cn> 0.5 </cn>
+                          <ci> h_3 </ci>
+                        </apply>
+                      </apply>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <ci> h_3 </ci>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <times/>
+                                <ci> x6 </ci>
+                                <apply>
+                                  <minus/>
+                                  <apply>
+                                    <divide/>
+                                    <apply>
+                                      <times/>
+                                      <apply>
+                                        <plus/>
+                                        <apply>
+                                          <times/>
+                                          <ci> b_1_3 </ci>
+                                          <ci> x1 </ci>
+                                        </apply>
+                                        <apply>
+                                          <times/>
+                                          <ci> b_2_3 </ci>
+                                          <ci> x2 </ci>
+                                        </apply>
+                                      </apply>
+                                      <apply>
+                                        <plus/>
+                                        <ci> b_1_3 </ci>
+                                        <ci> b_2_3 </ci>
+                                        <cn type="integer"> 1 </cn>
+                                      </apply>
+                                    </apply>
+                                    <apply>
+                                      <times/>
+                                      <apply>
+                                        <plus/>
+                                        <ci> b_1_3 </ci>
+                                        <ci> b_2_3 </ci>
+                                      </apply>
+                                      <apply>
+                                        <plus/>
+                                        <apply>
+                                          <times/>
+                                          <ci> b_1_3 </ci>
+                                          <ci> x1 </ci>
+                                        </apply>
+                                        <apply>
+                                          <times/>
+                                          <ci> b_2_3 </ci>
+                                          <ci> x2 </ci>
+                                        </apply>
+                                        <cn type="integer"> 1 </cn>
+                                      </apply>
+                                    </apply>
+                                  </apply>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <ci> a_6_3 </ci>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <apply>
+                                  <times/>
+                                  <ci> a_6_3 </ci>
+                                  <ci> x6 </ci>
+                                </apply>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                            <cn> 0.5 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <times/>
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <exp/>
+                          <apply>
+                            <times/>
+                            <ci> h_3 </ci>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <divide/>
+                                <apply>
+                                  <times/>
+                                  <ci> x6 </ci>
+                                  <apply>
+                                    <minus/>
+                                    <apply>
+                                      <divide/>
+                                      <apply>
+                                        <times/>
+                                        <apply>
+                                          <plus/>
+                                          <apply>
+                                            <times/>
+                                            <ci> b_1_3 </ci>
+                                            <ci> x1 </ci>
+                                          </apply>
+                                          <apply>
+                                            <times/>
+                                            <ci> b_2_3 </ci>
+                                            <ci> x2 </ci>
+                                          </apply>
+                                        </apply>
+                                        <apply>
+                                          <plus/>
+                                          <ci> b_1_3 </ci>
+                                          <ci> b_2_3 </ci>
+                                          <cn type="integer"> 1 </cn>
+                                        </apply>
+                                      </apply>
+                                      <apply>
+                                        <times/>
+                                        <apply>
+                                          <plus/>
+                                          <ci> b_1_3 </ci>
+                                          <ci> b_2_3 </ci>
+                                        </apply>
+                                        <apply>
+                                          <plus/>
+                                          <apply>
+                                            <times/>
+                                            <ci> b_1_3 </ci>
+                                            <ci> x1 </ci>
+                                          </apply>
+                                          <apply>
+                                            <times/>
+                                            <ci> b_2_3 </ci>
+                                            <ci> x2 </ci>
+                                          </apply>
+                                          <cn type="integer"> 1 </cn>
+                                        </apply>
+                                      </apply>
+                                    </apply>
+                                    <cn type="integer"> 1 </cn>
+                                  </apply>
+                                  <apply>
+                                    <plus/>
+                                    <ci> a_6_3 </ci>
+                                    <cn type="integer"> 1 </cn>
+                                  </apply>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <apply>
+                                    <times/>
+                                    <ci> a_6_3 </ci>
+                                    <ci> x6 </ci>
+                                  </apply>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                              </apply>
+                              <cn> 0.5 </cn>
+                            </apply>
+                          </apply>
+                        </apply>
+                        <cn type="integer"> 1 </cn>
+                      </apply>
+                      <apply>
+                        <minus/>
+                        <apply>
+                          <exp/>
+                          <apply>
+                            <times/>
+                            <cn> 0.5 </cn>
+                            <ci> h_3 </ci>
+                          </apply>
+                        </apply>
+                        <cn type="integer"> 1 </cn>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <ci> x3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> delta_1 </ci>
+                  <ci> u1 </ci>
+                  <apply>
+                    <minus/>
+                    <ci> x3 </ci>
+                    <cn type="integer"> 1 </cn>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction4" reversible="false">
+        <listOfProducts>
+          <speciesReference species="x4" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="x3"/>
+          <modifierSpeciesReference species="x4"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <minus/>
+                  <ci> x4 </ci>
+                </apply>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <ci> h_4 </ci>
+                        <apply>
+                          <minus/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <times/>
+                              <ci> x3 </ci>
+                              <apply>
+                                <plus/>
+                                <ci> b_3_4 </ci>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <times/>
+                                <ci> b_3_4 </ci>
+                                <ci> x3 </ci>
+                              </apply>
+                              <cn type="integer"> 1 </cn>
+                            </apply>
+                          </apply>
+                          <cn> 0.5 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <cn> 0.5 </cn>
+                        <ci> h_4 </ci>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <ci> h_4 </ci>
+                          <apply>
+                            <minus/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <times/>
+                                <ci> x3 </ci>
+                                <apply>
+                                  <plus/>
+                                  <ci> b_3_4 </ci>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <apply>
+                                  <times/>
+                                  <ci> b_3_4 </ci>
+                                  <ci> x3 </ci>
+                                </apply>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                            <cn> 0.5 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <cn> 0.5 </cn>
+                          <ci> h_4 </ci>
+                        </apply>
+                      </apply>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction5" reversible="false">
+        <listOfProducts>
+          <speciesReference species="x5" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="x1"/>
+          <modifierSpeciesReference species="x2"/>
+          <modifierSpeciesReference species="x3"/>
+          <modifierSpeciesReference species="x5"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <apply>
+                  <divide/>
+                  <apply>
+                    <minus/>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <cn> 0.5 </cn>
+                        <ci> h_5 </ci>
+                      </apply>
+                    </apply>
+                    <apply>
+                      <exp/>
+                      <apply>
+                        <times/>
+                        <ci> h_5 </ci>
+                        <apply>
+                          <plus/>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <times/>
+                              <ci> x1 </ci>
+                              <apply>
+                                <minus/>
+                                <apply>
+                                  <divide/>
+                                  <apply>
+                                    <times/>
+                                    <apply>
+                                      <plus/>
+                                      <apply>
+                                        <times/>
+                                        <ci> b_2_5 </ci>
+                                        <ci> x2 </ci>
+                                      </apply>
+                                      <apply>
+                                        <times/>
+                                        <ci> b_3_5 </ci>
+                                        <ci> x3 </ci>
+                                      </apply>
+                                    </apply>
+                                    <apply>
+                                      <plus/>
+                                      <ci> b_2_5 </ci>
+                                      <ci> b_3_5 </ci>
+                                      <cn type="integer"> 1 </cn>
+                                    </apply>
+                                  </apply>
+                                  <apply>
+                                    <times/>
+                                    <apply>
+                                      <plus/>
+                                      <ci> b_2_5 </ci>
+                                      <ci> b_3_5 </ci>
+                                    </apply>
+                                    <apply>
+                                      <plus/>
+                                      <apply>
+                                        <times/>
+                                        <ci> b_2_5 </ci>
+                                        <ci> x2 </ci>
+                                      </apply>
+                                      <apply>
+                                        <times/>
+                                        <ci> b_3_5 </ci>
+                                        <ci> x3 </ci>
+                                      </apply>
+                                      <cn type="integer"> 1 </cn>
+                                    </apply>
+                                  </apply>
+                                </apply>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <ci> a_1_5 </ci>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                            <apply>
+                              <plus/>
+                              <apply>
+                                <times/>
+                                <ci> a_1_5 </ci>
+                                <ci> x1 </ci>
+                              </apply>
+                              <cn type="integer"> 1 </cn>
+                            </apply>
+                          </apply>
+                          <cn> 0.5 </cn>
+                        </apply>
+                      </apply>
+                    </apply>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <apply>
+                      <plus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <ci> h_5 </ci>
+                          <apply>
+                            <plus/>
+                            <apply>
+                              <divide/>
+                              <apply>
+                                <times/>
+                                <ci> x1 </ci>
+                                <apply>
+                                  <minus/>
+                                  <apply>
+                                    <divide/>
+                                    <apply>
+                                      <times/>
+                                      <apply>
+                                        <plus/>
+                                        <apply>
+                                          <times/>
+                                          <ci> b_2_5 </ci>
+                                          <ci> x2 </ci>
+                                        </apply>
+                                        <apply>
+                                          <times/>
+                                          <ci> b_3_5 </ci>
+                                          <ci> x3 </ci>
+                                        </apply>
+                                      </apply>
+                                      <apply>
+                                        <plus/>
+                                        <ci> b_2_5 </ci>
+                                        <ci> b_3_5 </ci>
+                                        <cn type="integer"> 1 </cn>
+                                      </apply>
+                                    </apply>
+                                    <apply>
+                                      <times/>
+                                      <apply>
+                                        <plus/>
+                                        <ci> b_2_5 </ci>
+                                        <ci> b_3_5 </ci>
+                                      </apply>
+                                      <apply>
+                                        <plus/>
+                                        <apply>
+                                          <times/>
+                                          <ci> b_2_5 </ci>
+                                          <ci> x2 </ci>
+                                        </apply>
+                                        <apply>
+                                          <times/>
+                                          <ci> b_3_5 </ci>
+                                          <ci> x3 </ci>
+                                        </apply>
+                                        <cn type="integer"> 1 </cn>
+                                      </apply>
+                                    </apply>
+                                  </apply>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                                <apply>
+                                  <plus/>
+                                  <ci> a_1_5 </ci>
+                                  <cn type="integer"> 1 </cn>
+                                </apply>
+                              </apply>
+                              <apply>
+                                <plus/>
+                                <apply>
+                                  <times/>
+                                  <ci> a_1_5 </ci>
+                                  <ci> x1 </ci>
+                                </apply>
+                                <cn type="integer"> 1 </cn>
+                              </apply>
+                            </apply>
+                            <cn> 0.5 </cn>
+                          </apply>
+                        </apply>
+                      </apply>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                    <apply>
+                      <minus/>
+                      <apply>
+                        <exp/>
+                        <apply>
+                          <times/>
+                          <cn> 0.5 </cn>
+                          <ci> h_5 </ci>
+                        </apply>
+                      </apply>
+                      <cn type="integer"> 1 </cn>
+                    </apply>
+                  </apply>
+                </apply>
+                <ci> x5 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="reaction6" reversible="false">
+        <listOfProducts>
+          <speciesReference species="x6" stoichiometry="1"/>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference species="x6"/>
+        </listOfModifiers>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci> cyt </ci>
+              <apply>
+                <minus/>
+                <ci> x6 </ci>
+              </apply>
+            </apply>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: export_full_parameters.tsv
+problems:
+  - sbml_files:
+    - model_export_full.xml
+    observable_files:
+    - export_full_observables.tsv
+    condition_files:
+    - export_full_conditions.tsv
+    measurement_files:
+    - export_full_measurements.tsv

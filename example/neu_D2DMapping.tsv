@@ -1,0 +1,37 @@
+Mapping of Nodes
+Node-Alias	Node-Name	Node-Number
+x1	CDK2	1	
+x2	CDK4	2	
+x3	CDKN1A	3	
+x4	PCNA	4	
+x5	RB1	5	
+x6	TP53	6	
+
+Mapping of Regulated Nodes
+Regulated-Alias	Node-Name	up or down	delta-Alias	is Active	Alias-Number
+u1	CDKN1A	u	delta_1	true	1	
+
+Mapping of Parameters
+Parameter-Alias	Node-Number	i'te Connection(or -1)	Parameter-Type	Source-Node-Alias(or Parameter-Type)	Source-Node-Number(or 0)
+h_1	1	-1	h	h	0	
+b_1_1	1	0	b	x1	1	
+b_3_1	1	1	b	x3	3	
+b_4_1	1	2	b	x4	4	
+h_2	2	-1	h	h	0	
+b_3_2	2	0	b	x3	3	
+b_6_2	2	1	b	x6	6	
+h_3	3	-1	h	h	0	
+b_1_3	3	0	b	x1	1	
+b_2_3	3	1	b	x2	2	
+a_6_3	3	2	a	x6	6	
+h_4	4	-1	h	h	0	
+b_3_4	4	0	b	x3	3	
+h_5	5	-1	h	h	0	
+a_1_5	5	0	a	x1	1	
+b_2_5	5	1	b	x2	2	
+b_3_5	5	2	b	x3	3	
+
+List of Nodes that are constant
+
+The final Time
+10.0

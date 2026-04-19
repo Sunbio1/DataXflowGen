@@ -1,0 +1,11 @@
+format_version: 1
+parameter_file: export_reduced_parameters.tsv
+problems:
+  - sbml_files:
+    - model_export_reduced.xml
+    observable_files:
+    - export_reduced_observables.tsv
+    condition_files:
+    - export_reduced_conditions.tsv
+    measurement_files:
+    - export_reduced_measurements.tsv
