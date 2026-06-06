@@ -60,19 +60,18 @@ cd DataXflowGen
 2. **Set up the environment**
 
 - Install Python (version as used in the manuscript).
-- Install required Python packages (e.g. `openai` and standard scientific stack).  
-  A `requirements.txt` or environment description can be added here.
+- Install the dependencies described in the Methods section of the manuscript, including the scientific Python stack and the GenAI-related packages used in the pipeline.
 
 3. **Run the pipeline**
 
-- Start with example/ to reproduce the workflow with the provided sample data.
+- Start with `example/` to reproduce the workflow with the provided sample data.
 - Follow the scripts in Initial model generation/ to create the first signed GRN hypothesis.
-- Use back_loop/ to iteratively extend and refine the network based on chi-square values.
-- Inspect the outputs in output_preparation/, and visualisation/.
+- Use `back_loop/` to iteratively extend and refine the network based on chi-square values.
+- Inspect the outputs in `output_preparation/`, and `visualisation/`.
 
 4. **Adapt to your own data**
 
-- Replace the example input files in example/ with your own time-series expression data and metadata.
+- Replace the example input files in `example/` with your own time-series expression data and metadata.
 - Adjust the configuration, prompts, and filtering steps to match your biological context.
 - Re-run the workflow to generate and validate a network tailored to your data.
 
