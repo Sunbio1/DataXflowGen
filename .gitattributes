@@ -1,0 +1,3 @@
+*.m linguist-language=Matlab
+data/ linguist-vendored=true
+output/ linguist-vendored=true
