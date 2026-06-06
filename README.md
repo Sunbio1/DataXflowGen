@@ -1,5 +1,5 @@
 # DataXflowGen
-DataXflowGen is a GenAI-assisted workflow for constructing, fitting and iteratively refining signed gene regulatory networks (sgGRNs) based on ordinary differential equations (ODEs). The pipeline combines large language models (LLMs) for hypothesis generation with deterministic data processing and model fitting.
+DataXflowGen is a GenAI-assisted workflow for constructing, fitting and iteratively refining signed gene regulatory networks (sgGRNs) based on ordinary differential equations (ODEs). The pipeline combines large language models (LLMs) for hypothesis generation with deterministic data processing and model fitting to investigate the hypothesis. This git repository is based on the publication "DataXflowGen for GenAI-driven model generation" that can be found under ...
 
 ## Overview
 
